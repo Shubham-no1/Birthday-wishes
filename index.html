@@ -3,171 +3,319 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday ❤️</title>
+<title>Birthday Surprise ❤️</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
 height:100vh;
 overflow:hidden;
-background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffd3e0);
 display:flex;
 justify-content:center;
 align-items:center;
+background:linear-gradient(-45deg,#ff758c,#ff7eb3,#ff9a9e,#fad0c4);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
 }
 
-.page{
-position:absolute;
-width:100%;
-height:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-transition:.6s;
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 }
 
-.card{
-background:rgba(255,255,255,.18);
-backdrop-filter:blur(10px);
-padding:35px;
-border-radius:20px;
+.container{
+position:relative;
+z-index:10;
 text-align:center;
 width:90%;
-max-width:430px;
-box-shadow:0 0 25px rgba(0,0,0,.2);
-color:white;
+max-width:550px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(12px);
+padding:45px;
+border-radius:25px;
+box-shadow:0 15px 35px rgba(0,0,0,.2);
 }
 
-h1{
-font-size:40px;
-margin-bottom:25px;
+.title{
+font-size:55px;
+font-weight:bold;
+color:#fff;
+letter-spacing:3px;
+text-shadow:
+0 0 10px #fff,
+0 0 20px #fff,
+0 0 40px #ff5ca8,
+0 0 70px #ff5ca8;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%,100%{transform:scale(1);}
+50%{transform:scale(1.03);}
+}
+
+.subtitle{
+margin-top:20px;
+font-size:20px;
+color:white;
+line-height:1.6;
 }
 
 input{
+margin-top:35px;
 width:100%;
-padding:15px;
-border:none;
-border-radius:10px;
+padding:16px;
 font-size:18px;
+border:none;
+border-radius:50px;
 outline:none;
-margin-bottom:15px;
 text-align:center;
 }
 
 button{
-padding:14px 35px;
-border:none;
-border-radius:30px;
+margin-top:20px;
+padding:15px 45px;
 font-size:18px;
-background:white;
-color:#ff3d7f;
+border:none;
+border-radius:50px;
 cursor:pointer;
+background:white;
+color:#ff3d85;
 font-weight:bold;
+transition:.3s;
 }
 
-#msg{
-margin-top:15px;
-color:yellow;
+button:hover{
+transform:scale(1.08);
 }
 
-#page2{
+#warning{
+margin-top:18px;
+font-size:18px;
+font-weight:bold;
+color:#fff176;
+min-height:25px;
+}
+
+#success{
 display:none;
-padding:30px;
-text-align:center;
+position:absolute;
+inset:0;
+background:linear-gradient(135deg,#ff6fa8,#ff8ac5);
+justify-content:center;
+align-items:center;
+flex-direction:column;
 color:white;
+font-size:30px;
+font-weight:bold;
+opacity:0;
+transition:1s;
 }
 
-.message{
-max-width:700px;
-font-size:22px;
-line-height:1.8;
-font-weight:500;
+.loader{
+margin-top:25px;
+width:55px;
+height:55px;
+border:6px solid rgba(255,255,255,.4);
+border-top:6px solid white;
+border-radius:50%;
+animation:spin 1s linear infinite;
 }
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+.heart{
+position:absolute;
+bottom:-40px;
+font-size:22px;
+animation:float linear infinite;
+opacity:.7;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<div id="page1" class="page">
-<div class="card">
-<h1>🎉 Happy Birthday 🎉</h1>
+<div id="hearts"></div>
+
+<div class="container">
+
+<div class="title">
+🎉 HAPPY BIRTHDAY RJ🎉
+</div>
+
+<div class="subtitle">
+I have something special waiting for you inside ❤️
+</div>
 
 <input
 type="password"
 id="password"
 placeholder="Enter Password">
 
-<button onclick="checkPassword()">
-Open ❤️
+<button id="openBtn">
+Open My Wishes ❤️
 </button>
 
-<p id="msg"></p>
-
-</div>
-</div>
-
-<div id="page2" class="page">
-
-<div class="message">
-
-<h1>Happy Birthday ❤️</h1>
-
-<p>
-
-Happy Birthday, my favourite person. ❤️
-
-<br><br>
-
-Today is all about celebrating the wonderful person you are.
-
-I hope this special day brings you endless happiness, countless smiles, and beautiful memories that stay with you forever.
-
-<br><br>
-
-You deserve all the love, success, peace, and joy this world has to offer.
-
-Never stop believing in yourself because you are truly amazing.
-
-<br><br>
-
-Thank you for being such a special part of my life.
-
-No matter what happens, I'll always wish the very best for you.
-
-<br><br>
-
-May this new year of your life be filled with laughter, exciting adventures, good health, and dreams coming true.
-
-<br><br>
-
-🎂❤️ Once Again, Happy Birthday! ❤️🎂
-
-</p>
+<div id="warning"></div>
 
 </div>
 
+<div id="success">
+
+<div>
+❤️ Password Accepted ❤️
 </div>
 
-<script>
+<div style="margin-top:15px;font-size:22px;">
+Preparing your surprise...
+</div>
+
+<div class="loader"></div>
+
+</div>
+
+  <script>
+
+let password = "348";
+let attempts = 5;
+
+const btn = document.getElementById("openBtn");
+const input = document.getElementById("password");
+const warning = document.getElementById("warning");
+const success = document.getElementById("success");
+
+btn.addEventListener("click", checkPassword);
+
+input.addEventListener("keypress", function(e){
+    if(e.key==="Enter"){
+        checkPassword();
+    }
+});
+
 function checkPassword(){
 
-const pass=document.getElementById("password").value;
+    if(input.value === password){
 
-if(pass==="348"){
-document.getElementById("page1").style.display="none";
-document.getElementById("page2").style.display="flex";
-}else{
-document.getElementById("msg").innerHTML="Wrong Password!";
+        warning.style.color="#7CFC00";
+        warning.innerHTML="✔ Password Correct!";
+
+        setTimeout(function(){
+
+            document.querySelector(".container").style.display="none";
+
+            success.style.display="flex";
+
+            setTimeout(function(){
+                success.style.opacity="1";
+            },100);
+
+            // Replace this with your Page 2 later
+            setTimeout(function(){
+
+                alert("Page 2 will open here.");
+
+                // Example:
+                // window.location.href="page2.html";
+
+            },2200);
+
+        },500);
+
+        return;
+    }
+
+    attempts--;
+
+    if(attempts>0){
+
+        warning.style.color="#FFF176";
+
+        warning.innerHTML=
+        "❌ Incorrect Password.<br>" +
+        "You have <b>"+attempts+"</b> attempt" +
+        (attempts==1?"":"s") +
+        " remaining.";
+
+    }else{
+
+        warning.style.color="#ff4d4d";
+
+        warning.innerHTML=
+        "🚫 Too many incorrect attempts.<br>Please come back later ❤️";
+
+        input.disabled=true;
+        btn.disabled=true;
+
+        btn.style.opacity=".5";
+        btn.style.cursor="not-allowed";
+        input.style.opacity=".6";
+
+    }
+
+    input.value="";
+    input.focus();
+
 }
 
+
+// Floating Hearts
+
+const hearts=document.getElementById("hearts");
+
+function createHeart(){
+
+    const heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML=Math.random()>0.5?"❤️":"💖";
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.fontSize=(18+Math.random()*22)+"px";
+
+    heart.style.animationDuration=(6+Math.random()*5)+"s";
+
+    hearts.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },11000);
+
 }
+
+setInterval(createHeart,350);
+
 </script>
 
 </body>
