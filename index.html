@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffd3e0);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.page{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+transition:.6s;
+}
+
+.card{
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(10px);
+padding:35px;
+border-radius:20px;
+text-align:center;
+width:90%;
+max-width:430px;
+box-shadow:0 0 25px rgba(0,0,0,.2);
+color:white;
+}
+
+h1{
+font-size:40px;
+margin-bottom:25px;
+}
+
+input{
+width:100%;
+padding:15px;
+border:none;
+border-radius:10px;
+font-size:18px;
+outline:none;
+margin-bottom:15px;
+text-align:center;
+}
+
+button{
+padding:14px 35px;
+border:none;
+border-radius:30px;
+font-size:18px;
+background:white;
+color:#ff3d7f;
+cursor:pointer;
+font-weight:bold;
+}
+
+#msg{
+margin-top:15px;
+color:yellow;
+}
+
+#page2{
+display:none;
+padding:30px;
+text-align:center;
+color:white;
+}
+
+.message{
+max-width:700px;
+font-size:22px;
+line-height:1.8;
+font-weight:500;
+}
+</style>
+</head>
+
+<body>
+
+<div id="page1" class="page">
+<div class="card">
+<h1>🎉 Happy Birthday 🎉</h1>
+
+<input
+type="password"
+id="password"
+placeholder="Enter Password">
+
+<button onclick="checkPassword()">
+Open ❤️
+</button>
+
+<p id="msg"></p>
+
+</div>
+</div>
+
+<div id="page2" class="page">
+
+<div class="message">
+
+<h1>Happy Birthday ❤️</h1>
+
+<p>
+
+Happy Birthday, my favourite person. ❤️
+
+<br><br>
+
+Today is all about celebrating the wonderful person you are.
+
+I hope this special day brings you endless happiness, countless smiles, and beautiful memories that stay with you forever.
+
+<br><br>
+
+You deserve all the love, success, peace, and joy this world has to offer.
+
+Never stop believing in yourself because you are truly amazing.
+
+<br><br>
+
+Thank you for being such a special part of my life.
+
+No matter what happens, I'll always wish the very best for you.
+
+<br><br>
+
+May this new year of your life be filled with laughter, exciting adventures, good health, and dreams coming true.
+
+<br><br>
+
+🎂❤️ Once Again, Happy Birthday! ❤️🎂
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+function checkPassword(){
+
+const pass=document.getElementById("password").value;
+
+if(pass==="348"){
+document.getElementById("page1").style.display="none";
+document.getElementById("page2").style.display="flex";
+}else{
+document.getElementById("msg").innerHTML="Wrong Password!";
+}
+
+}
+</script>
+
+</body>
+</html>
