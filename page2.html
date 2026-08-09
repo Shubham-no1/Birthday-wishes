@@ -69,36 +69,107 @@ body{
     transform:translateX(0);
 }
 
+<!-- =====================
+     SLIDE 1
+====================== -->
+<section class="slide slide1 active">
+    <div class="card">
+        <div class="flower-border"></div>
 
-/* =========================
-   SLIDE 1
-   PINK
-========================= */
+        <div class="message-container">
+            <div class="message">
+                Hi
+            </div>
+        </div>
 
-.slide1{
-    background:#ffeaf3;
-}
+        <button class="scroll-btn">↓</button>
+    </div>
+</section>
 
+<!-- =====================
+     SLIDE 2
+====================== -->
+<section class="slide slide2">
+    <div class="card">
+        <div class="balloon-border"></div>
 
-/* =========================
-   SLIDE 2
-   YELLOW
-========================= */
+        <div class="message-container">
+            <div class="message">
+                It's
+            </div>
+        </div>
 
-.slide2{
-    background:#fff9d9;
-}
+        <button class="scroll-btn">↓</button>
+    </div>
+</section>
 
+<!-- =====================
+     SLIDE 3
+====================== -->
+<section class="slide slide3">
+    <div class="card">
+        <div class="star-border"></div>
 
-/* =========================
-   SLIDE 3
-   RED / PINK
-========================= */
+        <div class="message-container">
+            <div class="message">
+                Your
+            </div>
+        </div>
 
-.slide3{
-    background:#ffe4e4;
-}
+        <button class="scroll-btn">↓</button>
+    </div>
+</section>
 
+<!-- =====================
+     SLIDE 4
+====================== -->
+<section class="slide slide4">
+    <div class="card">
+        <div class="jasmine-border"></div>
+
+        <div class="message-container">
+            <div class="message">
+                Birthday
+            </div>
+        </div>
+
+        <button class="scroll-btn">↓</button>
+    </div>
+</section>
+
+<!-- =====================
+     SLIDE 5
+====================== -->
+<section class="slide slide5">
+    <div class="card">
+        <div class="rose-border"></div>
+
+        <div class="message-container">
+            <div class="message">
+                Dear
+            </div>
+        </div>
+
+        <button class="scroll-btn">↓</button>
+    </div>
+</section>
+
+<!-- =====================
+     SLIDE 6
+====================== -->
+<section class="slide slide6">
+    <div class="card">
+        <div class="smile-border"></div>
+
+        <div class="message-container">
+            <div class="message">
+                Friend
+            </div>
+        </div>
+
+        <button class="scroll-btn">↓</button>
+    </div>
+</section>
 
 /* =========================
    GREETING CARD
@@ -128,6 +199,74 @@ body{
     overflow:hidden;
 }
 
+/* Slide Backgrounds */
+
+.slide1{
+    background:#ffeef5;
+}
+
+.slide2{
+    background:#fff9d9;
+}
+
+.slide3{
+    background:#ffe5e5;
+}
+
+.slide4{
+    background:#eaf8ff;
+}
+
+.slide5{
+    background:#f5ebff;
+}
+
+.slide6{
+    background:#ffeef5;
+}
+
+/* Message scrolling */
+
+.message-container{
+    max-height:65vh;
+    overflow-y:auto;
+    padding:15px;
+    scroll-behavior:smooth;
+}
+
+.message-container::-webkit-scrollbar{
+    display:none;
+}
+
+.scroll-btn{
+    position:absolute;
+    right:20px;
+    bottom:20px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:#ffffffcc;
+    font-size:22px;
+    cursor:pointer;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.scroll-btn:hover{
+    transform:scale(1.08);
+}
+
+/* Border placeholders */
+
+.star-border,
+.jasmine-border,
+.rose-border,
+.smile-border{
+    position:absolute;
+    inset:0;
+    border-radius:25px;
+    pointer-events:none;
+}
 
 /* =========================
    FLOWER BORDER
@@ -452,7 +591,7 @@ body{
             <div class="flower-border"></div>
 
             <div class="message">
-                Happy 
+                Happy Birthday Radhu
             </div>
 
         </div>
@@ -534,15 +673,13 @@ body{
     ====================== -->
 
     <div class="indicators">
-
-        <span class="dot active"></span>
-
-        <span class="dot"></span>
-
-        <span class="dot"></span>
-
+       <span class="dot active"></span>
+       <span class="dot"></span>
+       <span class="dot"></span>
+       <span class="dot"></span>
+       <span class="dot"></span>
+       <span class="dot"></span>
     </div>
-
 
 </div>
 
@@ -702,6 +839,36 @@ document.addEventListener("keydown", function(event){
 
 });
 
+/* Scroll button */
+
+document.querySelectorAll(".scroll-btn").forEach(btn=>{
+
+    btn.addEventListener("click",function(){
+
+        const container=this.previousElementSibling;
+
+        if(container.scrollTop + container.clientHeight >= container.scrollHeight-10){
+
+            container.scrollTo({
+                top:0,
+                behavior:"smooth"
+            });
+
+            this.innerHTML="↓";
+
+        }else{
+
+            container.scrollBy({
+                top:220,
+                behavior:"smooth"
+            });
+
+            this.innerHTML="↑";
+        }
+
+    });
+
+});
 
 /* =========================
    INITIALIZE
