@@ -1149,6 +1149,16 @@ body {
    FONT SIZES FOR MULTI-LINE MESSAGES
 ========================================= */
 
+/* =========================================
+   SLIDE 1 - SINGLE LINE MESSAGE
+========================================= */
+
+.slide1 .message {
+    font-size: clamp(20px, 3vw, 32px);
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
 /* Slide 2 - 3 lines */
 .slide2 .message {
     font-size: clamp(28px, 4vw, 38px);
@@ -1184,6 +1194,10 @@ body {
 /* Mobile adjustment */
 @media (max-width: 600px) {
 
+    .slide1 .message {
+        font-size: 24px;
+    }
+
     .slide2 .message {
         font-size: 32px;
     }
@@ -1207,23 +1221,8 @@ body {
     }
 }
 
-/* =========================================
-   SLIDE 1 - SINGLE LINE MESSAGE
-========================================= */
-
-.slide1 .message {
-    font-size: clamp(22px, 3.2vw, 40px);
-    line-height: 1.2;
-    white-space: nowrap;
-}
 
 
-/* Mobile */
-@media (max-width: 600px) {
-
-    .slide1 .message {
-        font-size: 24px;
-    }
 
 }
     
