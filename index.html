@@ -64,6 +64,13 @@ color:white;
 line-height:1.6;
 }
 
+.password-hint{
+    margin-top:14px;
+    font-size:14px;
+    color:rgba(255,255,255,.9);
+    font-style:italic;
+}
+
 input{
 margin-top:35px;
 width:100%;
@@ -165,11 +172,16 @@ opacity:0;
 <div class="container">
 
 <div class="title">
-🎉 HAPPY BIRTHDAY Chota Don🎉
+🎉 HAPPY BIRTHDAY <br>
+    Chota Don🎉
 </div>
 
 <div class="subtitle">
 I have special wishes for you inside ❤️
+</div>
+
+<div class="password-hint">
+Hint: Radha, Password asa number ahe jya mule tu mazi bestfriend banli. ❤️
 </div>
 
 <input
@@ -192,7 +204,7 @@ Open My Wishes ❤️
 </div>
 
 <div style="margin-top:15px;font-size:22px;">
-Preparing your surprise...
+Happy that you remember...
 </div>
 
 <div class="loader"></div>
@@ -201,7 +213,7 @@ Preparing your surprise...
 
   <script>
 
-let password = "1133";
+let password = "348";
 let attempts = 5;
 
 const btn = document.getElementById("openBtn");
