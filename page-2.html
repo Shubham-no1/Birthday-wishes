@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Birthday ❤️</title>
+
+<!--
+    PART 2 WILL ADD THE COMPLETE CSS HERE
+-->
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================================================
+   SLIDES CONTAINER
+========================================================= */
+
+.slides-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SLIDE
+========================================================= */
+
+.slide {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateX(45px);
+
+    transition:
+        opacity 0.55s ease,
+        transform 0.55s ease,
+        visibility 0.55s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   BACKGROUNDS
+========================================================= */
+
+.slide1 {
+    background: #fff0f6;
+}
+
+.slide2 {
+    background: #fff9dc;
+}
+
+.slide3 {
+    background: #ffe8e8;
+}
+
+.slide4 {
+    background: #e9f8ff;
+}
+
+.slide5 {
+    background: #f3e9ff;
+}
+
+.slide6 {
+    background: #fff0f6;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+    position: relative;
+
+    width: min(850px, 92vw);
+    height: min(700px, 82vh);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.48);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.10);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MESSAGE AREA
+========================================================= */
+
+.message-container {
+    position: relative;
+    z-index: 5;
+
+    width: 78%;
+    max-height: 62vh;
+
+    padding: 35px 20px;
+
+    overflow-y: auto;
+
+    text-align: center;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+}
+
+.message-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.message-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(120, 120, 120, 0.25);
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message {
+    font-size: clamp(55px, 9vw, 105px);
+
+    font-weight: bold;
+
+    line-height: 1.2;
+
+    word-wrap: break-word;
+
+    text-shadow:
+        2px 3px 5px rgba(0, 0, 0, 0.10);
+
+    animation: messageAppear 0.8s ease;
+}
+
+
+/* =========================================================
+   MESSAGE COLORS
+========================================================= */
+
+.slide1 .message,
+.slide6 .message {
+    color: #c94f7d;
+}
+
+.slide2 .message {
+    color: #c79b27;
+}
+
+.slide3 .message {
+    color: #c74d55;
+}
+
+.slide4 .message {
+    color: #4c9bb7;
+}
+
+.slide5 .message {
+    color: #8858aa;
+}
+
+
+/* =========================================================
+   MESSAGE ANIMATION
+========================================================= */
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.90) translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+/* =========================================================
+   SIMPLE DECORATIVE BORDERS
+========================================================= */
+
+.flower-border,
+.balloon-border,
+.star-border,
+.jasmine-border,
+.rose-border,
+.smile-border {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BORDER POSITIONS
+========================================================= */
+
+.flower-border span,
+.balloon-border span,
+.star-border span,
+.jasmine-border span,
+.rose-border span,
+.smile-border span {
+
+    position: absolute;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    opacity: 0.75;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   TOP BORDER
+========================================================= */
+
+.flower-border span:nth-child(1),
+.balloon-border span:nth-child(1),
+.star-border span:nth-child(1),
+.jasmine-border span:nth-child(1),
+.rose-border span:nth-child(1),
+.smile-border span:nth-child(1) {
+
+    top: 10px;
+    left: 18px;
+}
+
+
+/* =========================================================
+   TOP RIGHT
+========================================================= */
+
+.flower-border span:nth-child(2),
+.balloon-border span:nth-child(2),
+.star-border span:nth-child(2),
+.jasmine-border span:nth-child(2),
+.rose-border span:nth-child(2),
+.smile-border span:nth-child(2) {
+
+    top: 10px;
+    right: 18px;
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.flower-border span:nth-child(3),
+.balloon-border span:nth-child(3),
+.star-border span:nth-child(3),
+.jasmine-border span:nth-child(3),
+.rose-border span:nth-child(3),
+.smile-border span:nth-child(3) {
+
+    bottom: 10px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+/* =========================================================
+   FLOWER BORDER
+========================================================= */
+
+.flower-border::before,
+.flower-border::after {
+
+    content: "🌸  🌷  🌸  🌷  🌸";
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 18px;
+
+    letter-spacing: 8px;
+
+    white-space: nowrap;
+
+    opacity: 0.65;
+}
+
+.flower-border::before {
+    top: 8px;
+}
+
+.flower-border::after {
+    bottom: 8px;
+}
+
+
+/* =========================================================
+   BALLOON BORDER
+========================================================= */
+
+.balloon-border::before,
+.balloon-border::after {
+
+    content: "🎈  🎈  🎈  🎈  🎈";
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 18px;
+
+    letter-spacing: 10px;
+
+    white-space: nowrap;
+
+    opacity: 0.65;
+}
+
+.balloon-border::before {
+    top: 8px;
+}
+
+.balloon-border::after {
+    bottom: 8px;
+}
+
+
+/* =========================================================
+   STAR BORDER
+========================================================= */
+
+.star-border::before,
+.star-border::after {
+
+    content: "⭐  ✨  ⭐  ✨  ⭐";
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 18px;
+
+    letter-spacing: 8px;
+
+    white-space: nowrap;
+
+    opacity: 0.65;
+}
+
+.star-border::before {
+    top: 8px;
+}
+
+.star-border::after {
+    bottom: 8px;
+}
+
+
+/* =========================================================
+   JASMINE BORDER
+========================================================= */
+
+.jasmine-border::before,
+.jasmine-border::after {
+
+    content: "🤍  🌼  🤍  🌼  🤍";
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 18px;
+
+    letter-spacing: 8px;
+
+    white-space: nowrap;
+
+    opacity: 0.65;
+}
+
+.jasmine-border::before {
+    top: 8px;
+}
+
+.jasmine-border::after {
+    bottom: 8px;
+}
+
+
+/* =========================================================
+   ROSE BORDER
+========================================================= */
+
+.rose-border::before,
+.rose-border::after {
+
+    content: "🌹  🌹  🌹  🌹  🌹";
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 18px;
+
+    letter-spacing: 8px;
+
+    white-space: nowrap;
+
+    opacity: 0.65;
+}
+
+.rose-border::before {
+    top: 8px;
+}
+
+.rose-border::after {
+    bottom: 8px;
+}
+
+
+/* =========================================================
+   SMILE BORDER
+========================================================= */
+
+.smile-border::before,
+.smile-border::after {
+
+    content: "😊  🙂  😊  🙂  😊";
+
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 18px;
+
+    letter-spacing: 8px;
+
+    white-space: nowrap;
+
+    opacity: 0.65;
+}
+
+.smile-border::before {
+    top: 8px;
+}
+
+.smile-border::after {
+    bottom: 8px;
+}
+
+
+/* =========================================================
+   VERTICAL SIDE DECORATION
+========================================================= */
+
+.flower-border,
+.balloon-border,
+.star-border,
+.jasmine-border,
+.rose-border,
+.smile-border {
+
+    border: 2px solid rgba(255, 255, 255, 0.45);
+
+    border-radius: 24px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 38px;
+
+    transform: translateX(-50%);
+
+    z-index: 50;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   NAV BUTTON
+========================================================= */
+
+.nav-btn {
+
+    border: none;
+
+    padding: 12px 22px;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    color: #555;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.nav-btn:hover:not(:disabled) {
+
+    transform: translateY(-2px);
+
+    background: white;
+}
+
+.nav-btn:active:not(:disabled) {
+
+    transform: scale(0.96);
+}
+
+.nav-btn:disabled {
+
+    opacity: 0.40;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   INDICATORS
+========================================================= */
+
+.indicators {
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 10px;
+
+    transform: translateX(-50%);
+
+    z-index: 50;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+/* =========================================================
+   DOT
+========================================================= */
+
+.dot {
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: rgba(90, 90, 90, 0.28);
+
+    cursor: pointer;
+
+    transition:
+        width 0.25s ease,
+        background 0.25s ease;
+}
+
+.dot.active {
+
+    width: 22px;
+
+    border-radius: 10px;
+
+    background: rgba(90, 90, 90, 0.65);
+}
+
+
+/* =========================================================
+   SCROLL BUTTON
+========================================================= */
+
+.scroll-btn {
+
+    position: absolute;
+
+    right: 18px;
+
+    bottom: 18px;
+
+    z-index: 30;
+
+    width: 43px;
+
+    height: 43px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.90);
+
+    color: #666;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.scroll-btn:hover {
+
+    transform: scale(1.08);
+
+    background: white;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .slide {
+
+        padding: 12px;
+    }
+
+    .card {
+
+        width: 94vw;
+
+        height: 78vh;
+
+        border-radius: 22px;
+    }
+
+    .message-container {
+
+        width: 88%;
+
+        max-height: 58vh;
+
+        padding: 25px 12px;
+    }
+
+    .message {
+
+        font-size: clamp(48px, 16vw, 80px);
+    }
+
+    .navigation {
+
+        bottom: 38px;
+
+        gap: 8px;
+    }
+
+    .nav-btn {
+
+        padding: 9px 15px;
+
+        font-size: 13px;
+    }
+
+    .indicators {
+
+        bottom: 10px;
+    }
+
+    .dot {
+
+        width: 6px;
+
+        height: 6px;
+    }
+
+    .dot.active {
+
+        width: 17px;
+    }
+
+    .flower-border::before,
+    .flower-border::after,
+    .balloon-border::before,
+    .balloon-border::after,
+    .star-border::before,
+    .star-border::after,
+    .jasmine-border::before,
+    .jasmine-border::after,
+    .rose-border::before,
+    .rose-border::after,
+    .smile-border::before,
+    .smile-border::after {
+
+        font-size: 13px;
+
+        letter-spacing: 3px;
+    }
+
+    .flower-border span,
+    .balloon-border span,
+    .star-border span,
+    .jasmine-border span,
+    .rose-border span,
+    .smile-border span {
+
+        font-size: 18px;
+    }
+
+    .scroll-btn {
+
+        width: 38px;
+
+        height: 38px;
+
+        right: 12px;
+
+        bottom: 12px;
+
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+========================================================= */
+
+@media (max-height: 600px) {
+
+    .card {
+
+        height: 72vh;
+    }
+
+    .message-container {
+
+        max-height: 52vh;
+    }
+
+    .navigation {
+
+        bottom: 30px;
+    }
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .slide {
+
+        transition: none;
+    }
+
+    .message {
+
+        animation: none;
+    }
+}
+
+/* =========================================================
+   PART 4 — FINAL POLISH
+========================================================= */
+
+
+/* =========================================================
+   DECORATIVE BORDER
+   Keep decorations behind the message
+========================================================= */
+
+.flower-border,
+.balloon-border,
+.star-border,
+.jasmine-border,
+.rose-border,
+.smile-border {
+    z-index: 2;
+}
+
+
+/* =========================================================
+   TOP + BOTTOM DECORATIONS
+========================================================= */
+
+.flower-border::before,
+.flower-border::after,
+.balloon-border::before,
+.balloon-border::after,
+.star-border::before,
+.star-border::after,
+.jasmine-border::before,
+.jasmine-border::after,
+.rose-border::before,
+.rose-border::after,
+.smile-border::before,
+.smile-border::after {
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   SIDE DECORATIONS
+========================================================= */
+
+.flower-border span:nth-child(1),
+.balloon-border span:nth-child(1),
+.star-border span:nth-child(1),
+.jasmine-border span:nth-child(1),
+.rose-border span:nth-child(1),
+.smile-border span:nth-child(1) {
+
+    top: 12px;
+    left: 14px;
+}
+
+
+.flower-border span:nth-child(2),
+.balloon-border span:nth-child(2),
+.star-border span:nth-child(2),
+.jasmine-border span:nth-child(2),
+.rose-border span:nth-child(2),
+.smile-border span:nth-child(2) {
+
+    top: 12px;
+    right: 14px;
+}
+
+
+.flower-border span:nth-child(3),
+.balloon-border span:nth-child(3),
+.star-border span:nth-child(3),
+.jasmine-border span:nth-child(3),
+.rose-border span:nth-child(3),
+.smile-border span:nth-child(3) {
+
+    bottom: 12px;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+
+/* =========================================================
+   DECORATIVE BORDER OPACITY
+========================================================= */
+
+.flower-border::before,
+.flower-border::after {
+    opacity: 0.60;
+}
+
+.balloon-border::before,
+.balloon-border::after {
+    opacity: 0.60;
+}
+
+.star-border::before,
+.star-border::after {
+    opacity: 0.60;
+}
+
+.jasmine-border::before,
+.jasmine-border::after {
+    opacity: 0.60;
+}
+
+.rose-border::before,
+.rose-border::after {
+    opacity: 0.60;
+}
+
+.smile-border::before,
+.smile-border::after {
+    opacity: 0.60;
+}
+
+
+/* =========================================================
+   SCROLL BUTTON
+========================================================= */
+
+.scroll-btn {
+    display: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.scroll-btn:hover {
+    transform: scale(1.08);
+}
+
+.scroll-btn:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================================
+   NAVIGATION ABOVE CARD
+========================================================= */
+
+.navigation {
+    pointer-events: auto;
+}
+
+.indicators {
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   MOBILE FINAL FIX
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .card {
+        height: 76vh;
+    }
+
+    .message-container {
+        max-height: 55vh;
+    }
+
+    .navigation {
+        bottom: 40px;
+    }
+
+    .indicators {
+        bottom: 9px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL HEIGHT DEVICES
+========================================================= */
+
+@media (max-height: 650px) {
+
+    .card {
+        height: 70vh;
+    }
+
+    .message-container {
+        max-height: 48vh;
+    }
+
+    .navigation {
+        bottom: 32px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .card {
+        width: 95vw;
+        border-radius: 20px;
+    }
+
+    .message {
+        font-size: 52px;
+    }
+
+    .nav-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .scroll-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 17px;
+    }
+
+}
+
+
+/* =========================================================
+   PREVENT TEXT SELECTION ON CONTROLS
+========================================================= */
+
+.nav-btn,
+.dot,
+.scroll-btn {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/* =========================================================
+   SMOOTH CARD APPEARANCE
+========================================================= */
+
+.slide.active .card {
+    animation: cardAppear 0.65s ease;
+}
+
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   FINAL MESSAGE APPEARANCE
+========================================================= */
+
+.slide.active .message {
+    animation: messageAppear 0.75s ease;
+}
+  
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ALL SIX SLIDES
+===================================================== -->
+
+<div class="slides-container">
+
+
+    <!-- =========================
+         SLIDE 1
+         Pink + Flower
+    ========================== -->
+
+    <section class="slide slide1 active">
+
+        <div class="card">
+
+            <div class="flower-border">
+
+                <span>🌸</span>
+                <span>🌷</span>
+                <span>🌸</span>
+
+            </div>
+
+
+            <div class="message-container">
+
+                <div class="message">
+                    Hi
+                </div>
+
+            </div>
+
+
+            <button class="scroll-btn" type="button">
+                ↓
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SLIDE 2
+         Yellow + Balloon
+    ========================== -->
+
+    <section class="slide slide2">
+
+        <div class="card">
+
+            <div class="balloon-border">
+
+                <span>🎈</span>
+                <span>🎈</span>
+                <span>🎈</span>
+
+            </div>
+
+
+            <div class="message-container">
+
+                <div class="message">
+                    It's
+                </div>
+
+            </div>
+
+
+            <button class="scroll-btn" type="button">
+                ↓
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SLIDE 3
+         Red + Stars
+    ========================== -->
+
+    <section class="slide slide3">
+
+        <div class="card">
+
+            <div class="star-border">
+
+                <span>⭐</span>
+                <span>✨</span>
+                <span>⭐</span>
+
+            </div>
+
+
+            <div class="message-container">
+
+                <div class="message">
+                    Your
+                </div>
+
+            </div>
+
+
+            <button class="scroll-btn" type="button">
+                ↓
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SLIDE 4
+         Sky Blue + Jasmine
+    ========================== -->
+
+    <section class="slide slide4">
+
+        <div class="card">
+
+            <div class="jasmine-border">
+
+                <span>🤍</span>
+                <span>🌼</span>
+                <span>🤍</span>
+
+            </div>
+
+
+            <div class="message-container">
+
+                <div class="message">
+                    Birthday
+                </div>
+
+            </div>
+
+
+            <button class="scroll-btn" type="button">
+                ↓
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SLIDE 5
+         Violet + Rose
+    ========================== -->
+
+    <section class="slide slide5">
+
+        <div class="card">
+
+            <div class="rose-border">
+
+                <span>🌹</span>
+                <span>🌹</span>
+                <span>🌹</span>
+
+            </div>
+
+
+            <div class="message-container">
+
+                <div class="message">
+                    Dear
+                </div>
+
+            </div>
+
+
+            <button class="scroll-btn" type="button">
+                ↓
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SLIDE 6
+         Pink + Smile
+    ========================== -->
+
+    <section class="slide slide6">
+
+        <div class="card">
+
+            <div class="smile-border">
+
+                <span>😊</span>
+                <span>😊</span>
+                <span>😊</span>
+
+            </div>
+
+
+            <div class="message-container">
+
+                <div class="message">
+                    Friend
+                </div>
+
+            </div>
+
+
+            <button class="scroll-btn" type="button">
+                ↓
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         NAVIGATION
+    ================================================== -->
+
+    <div class="navigation">
+
+
+        <button
+            class="nav-btn"
+            id="previousBtn"
+            type="button"
+            disabled>
+
+            ← Previous
+
+        </button>
+
+
+        <button
+            class="nav-btn"
+            id="nextBtn"
+            type="button">
+
+            Next →
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         SIX SLIDE INDICATORS
+    ================================================== -->
+
+    <div class="indicators">
+
+
+        <span
+            class="dot active"
+            data-slide="0">
+        </span>
+
+
+        <span
+            class="dot"
+            data-slide="1">
+        </span>
+
+
+        <span
+            class="dot"
+            data-slide="2">
+        </span>
+
+
+        <span
+            class="dot"
+            data-slide="3">
+        </span>
+
+
+        <span
+            class="dot"
+            data-slide="4">
+        </span>
+
+
+        <span
+            class="dot"
+            data-slide="5">
+        </span>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     PART 3 WILL ADD JAVASCRIPT HERE
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   SLIDE NAVIGATION
+===================================================== */
+
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+const previousBtn = document.getElementById("previousBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let currentSlide = 0;
+
+
+/* =====================================================
+   SHOW SELECTED SLIDE
+===================================================== */
+
+function showSlide(index) {
+
+    /* Safety check */
+    if (index < 0 || index >= slides.length) {
+        return;
+    }
+
+    currentSlide = index;
+
+
+    /* -------------------------
+       Update slides
+    ------------------------- */
+
+    slides.forEach((slide, i) => {
+
+        slide.classList.toggle(
+            "active",
+            i === currentSlide
+        );
+
+    });
+
+
+    /* -------------------------
+       Update dots
+    ------------------------- */
+
+    dots.forEach((dot, i) => {
+
+        dot.classList.toggle(
+            "active",
+            i === currentSlide
+        );
+
+    });
+
+
+    /* -------------------------
+       Previous button
+    ------------------------- */
+
+    previousBtn.disabled =
+        currentSlide === 0;
+
+
+    /* -------------------------
+       Next button
+    ------------------------- */
+
+    nextBtn.disabled =
+        currentSlide === slides.length - 1;
+
+
+    /* -------------------------
+       Reset scroll position
+       whenever a new slide opens
+    ------------------------- */
+
+    const currentMessage =
+        slides[currentSlide]
+        .querySelector(".message-container");
+
+    if (currentMessage) {
+
+        currentMessage.scrollTop = 0;
+
+    }
+
+
+    /* Reset scroll button */
+
+    const currentScrollBtn =
+        slides[currentSlide]
+        .querySelector(".scroll-btn");
+
+    if (currentScrollBtn) {
+
+        currentScrollBtn.textContent = "↓";
+
+    }
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextSlide() {
+
+    if (currentSlide < slides.length - 1) {
+
+        showSlide(currentSlide + 1);
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousSlide() {
+
+    if (currentSlide > 0) {
+
+        showSlide(currentSlide - 1);
+
+    }
+
+}
+
+
+/* =====================================================
+   BUTTON EVENTS
+===================================================== */
+
+nextBtn.addEventListener(
+    "click",
+    nextSlide
+);
+
+previousBtn.addEventListener(
+    "click",
+    previousSlide
+);
+
+
+/* =====================================================
+   DOT EVENTS
+===================================================== */
+
+dots.forEach((dot, index) => {
+
+    dot.addEventListener(
+        "click",
+        function () {
+
+            showSlide(index);
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   KEYBOARD CONTROLS
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function (event) {
+
+        if (event.key === "ArrowRight") {
+
+            nextSlide();
+
+        }
+
+        if (event.key === "ArrowLeft") {
+
+            previousSlide();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   SCROLL BUTTONS
+===================================================== */
+
+const scrollButtons =
+    document.querySelectorAll(".scroll-btn");
+
+
+scrollButtons.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        function () {
+
+            const slide =
+                this.closest(".slide");
+
+            const messageContainer =
+                slide.querySelector(
+                    ".message-container"
+                );
+
+
+            if (!messageContainer) {
+                return;
+            }
+
+
+            const maxScroll =
+                messageContainer.scrollHeight -
+                messageContainer.clientHeight;
+
+
+            /* Nothing to scroll */
+
+            if (maxScroll <= 5) {
+
+                return;
+
+            }
+
+
+            /* -------------------------
+               If at bottom,
+               go back to top
+            ------------------------- */
+
+            if (
+                messageContainer.scrollTop
+                >= maxScroll - 10
+            ) {
+
+                messageContainer.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+                this.textContent = "↓";
+
+            }
+
+
+            /* -------------------------
+               Otherwise scroll down
+            ------------------------- */
+
+            else {
+
+                messageContainer.scrollBy({
+                    top: 220,
+                    behavior: "smooth"
+                });
+
+                this.textContent = "↑";
+
+            }
+
+        }
+    );
+
+});
+
+
+/* =====================================================
+   UPDATE SCROLL BUTTON
+   WHEN USER MANUALLY SCROLLS
+===================================================== */
+
+document
+    .querySelectorAll(".message-container")
+    .forEach(container => {
+
+        container.addEventListener(
+            "scroll",
+            function () {
+
+                const slide =
+                    this.closest(".slide");
+
+                const button =
+                    slide.querySelector(
+                        ".scroll-btn"
+                    );
+
+                if (!button) {
+                    return;
+                }
+
+
+                const maxScroll =
+                    this.scrollHeight -
+                    this.clientHeight;
+
+
+                if (maxScroll <= 5) {
+
+                    button.style.display = "none";
+
+                    return;
+
+                }
+
+
+                button.style.display = "block";
+
+
+                if (
+                    this.scrollTop
+                    >= maxScroll - 10
+                ) {
+
+                    button.textContent = "↑";
+
+                } else {
+
+                    button.textContent = "↓";
+
+                }
+
+            }
+        );
+
+    });
+
+
+/* =====================================================
+   SWIPE SUPPORT FOR MOBILE
+===================================================== */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+
+document.addEventListener(
+    "touchstart",
+    function (event) {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+);
+
+
+document.addEventListener(
+    "touchend",
+    function (event) {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        handleSwipe();
+
+    },
+    { passive: true }
+);
+
+
+function handleSwipe() {
+
+    const difference =
+        touchStartX - touchEndX;
+
+
+    /* Swipe left = Next */
+
+    if (difference > 50) {
+
+        nextSlide();
+
+    }
+
+
+    /* Swipe right = Previous */
+
+    if (difference < -50) {
+
+        previousSlide();
+
+    }
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+document.querySelectorAll(".slide").forEach(slide => {
+
+    const container =
+        slide.querySelector(".message-container");
+
+    const button =
+        slide.querySelector(".scroll-btn");
+
+    if (
+        container &&
+        button &&
+        container.scrollHeight > container.clientHeight + 5
+    ) {
+        button.style.display = "block";
+    }
+
+});  
+  
+showSlide(0);
+
+</script>
+
+
+</body>
+
+</html>
